@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testcovid</title>
+</head>
+<body>
+    
+
+<script>
+    var temp,rep1,rep,a=0,b=0,somcpt=0;
+
+    function answer(rep) {
+        var cpt=0;
+        while (rep !== "o" && rep !=="oui" && rep !=="OUI" && rep1 !== "O" && rep !=="n" && rep !== "non" && rep !=="NON" && rep1 !== "N") {
+            rep=prompt("Veuillez repondre par oui ou non","OUI");
+        }
+        if (rep==="o" || rep==="oui" || rep==="OUI" ) {
+            cpt=1;
+        }
+        else{
+            cpt=0;
+        }
+
+
+        return cpt;
+    }
+
+    temp=prompt('Donnez votre temperature corporelle :');
+    console.log(temp);
+
+
+    if (temp<=35) {
+        alert("Votre temperature est anormale . Allez consulter un medecin svp");
+    }
+       /* ------------------------------------------------------------------------------------------temperature entre 35 et 38 ---------------------------------------------------------- */
+
+    else if(temp>35 && temp<38){
+        rep1=prompt("Votre temperature n'est pas inquietant \n\n voulez-vous continuer l'evaluation des symptomes (o) ou quitter ? (n) : ")
+
+        while (rep1 !== "o" && rep1 !== "O" && rep1 !=="oui" && rep1 !=="OUI" && rep1 !=="n" && rep1 !== "non" && rep1 !=="NON"&& rep1 !== "N") {
+            rep1=prompt("Voulez-vous continuer l'evaluation des symptomes (o) ou quitter ? (n) : ")
+        }
+        if (rep1 ==="n" || rep1 === "non" || rep1 ==="NON" || rep1==="N") {
+            alert("\n\nMerci et a bientot !!! ")
+        }
+        else{
+            alert("\n\n Merci de repondre aux questions qui suivent")
+
+            //q1
+            rep=prompt("\nQuestion 1 \n\n Avez-vous des toux recents ou des toux qui se sont aggraves?");
+            var c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q2
+            rep=prompt("\nQuestion 2 \n\n Avez-vous des difficultes a respirer?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q3
+            rep=prompt("\nQuestion 3 \n\n Avez-vous des nez qui coulent?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q4
+            rep=prompt("\nQuestion 4 \n\n Avez-vous des maux de gorge?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q5
+            rep=prompt("\nQuestion 5 \n\n Avez-vous des maux de ventre?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q6
+            rep=prompt("\nQuestion 6 \n\n Avez-vous La diarrhee?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q7
+            rep=prompt("\nQuestion 7 \n\n Avez-vous des fatiques intenses?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q8
+            rep=prompt("\nQuestion 8 \n\n Avez-vous perdu votre appetit?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q9
+            rep=prompt("\nQuestion 9 \n\n Avez-vous des nausees?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q10
+            rep=prompt("\nQuestion 10 \n\n Avez-vous des douleurs musculaires?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q11
+            rep=prompt("\nQuestion 11 \n\n Avez-vous des maux de tete inhabituels?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+
+            //traitement resulats
+            if (somcpt<=2) {
+                alert("\n\n Rassurez-vous !! Vous n'avez pas de covid 19");
+                
+            }
+            else if (somcpt>2 && somcpt<=4) {
+                alert("\n\n Vous etes susceptible d'avoir la covid 19, respectez les mesures barrieres !!! ");
+                
+            }
+            else if (somcpt>4 && somcpt<=8) {
+                alert("\n\n ATTENTION !!!Vous avez un debut de covid!!! ");
+                
+            }
+            else{
+                alert("\n\n ATTENTION !!!Vous avez un cas avance de covid 19!!! \n\n veuillez consulter un medecin ou appeler au : \n\nNuméro vert : 800 00 50 50 \n Numéro SAMU : 15 15 \n Cellule d'alerte : 78 172 10 81 / 76 765 97 31 / 70 717 14 92");
+            }
+        }
+    }
+    /* ------------------------------------------------------------------------------------------temperature entre 38 et 40 ---------------------------------------------------------- */
+    else if (temp>38 && temp<40) 
+    {
+        
+            alert("\n\n Merci de repondre aux questions qui suivent")
+
+            //q1
+            rep=prompt("\nQuestion 1 \n\n Avez-vous des toux recents ou des toux qui se sont aggraves?");
+            var c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q2
+            rep=prompt("\nQuestion 2 \n\n Avez-vous des difficultes a respirer?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q3
+            rep=prompt("\nQuestion 3 \n\n Avez-vous des nez qui coulent?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q4
+            rep=prompt("\nQuestion 4 \n\n Avez-vous des maux de gorge?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q5
+            rep=prompt("\nQuestion 5 \n\n Avez-vous des maux de ventre?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q6
+            rep=prompt("\nQuestion 6 \n\n Avez-vous La diarrhee?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q7
+            rep=prompt("\nQuestion 7 \n\n Avez-vous des fatiques intenses?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q8
+            rep=prompt("\nQuestion 8 \n\n Avez-vous perdu votre appetit?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q9
+            rep=prompt("\nQuestion 9 \n\n Avez-vous des nausees?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q10
+            rep=prompt("\nQuestion 10 \n\n Avez-vous des douleurs musculaires?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+            //q11
+            rep=prompt("\nQuestion 11 \n\n Avez-vous des maux de tete inhabituels?");
+            c=answer(rep);
+            somcpt=somcpt+c;
+            console.log(somcpt);
+
+
+            //traitement resulats
+            if (somcpt<=2) {
+                alert("\n\n Rassurez-vous !! Vous n'avez pas de covid 19");
+                
+            }
+            else if (somcpt>2 && somcpt<=4) {
+                alert("\n\n Vous etes susceptible d'avoir la covid 19, respectez les mesures barrieres !!! ");
+                
+            }
+            else if (somcpt>4 && somcpt<=8) {
+                alert("\n\n ATTENTION !!!Vous avez un debut de covid!!! ");
+                
+            }
+            else{
+                alert("\n\n ATTENTION !!!Vous avez un cas avance de covid 19!!! \n\n veuillez consulter un medecin ou appeler au : \n\nNuméro vert : 800 00 50 50 \n Numéro SAMU : 15 15 \n Cellule d'alerte : 78 172 10 81 / 76 765 97 31 / 70 717 14 92");
+            }
+    }
+    /* ------------------------------------------------------------------------------------------temperature au dela de 40 ---------------------------------------------------------- */
+
+    else if (temp<=40) {
+        alert("Votre etat de sante est INQUITANT\n\n veuillez consulter un medecin ou appeler au : \n\nNuméro vert : 800 00 50 50 \n Numéro SAMU : 15 15 \n Cellule d'alerte : 78 172 10 81 / 76 765 97 31 / 70 717 14 92")
+        
+    }
+
+    else
+    {
+        alert("Donnez une temperature existante (des chiffres) ");
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>
