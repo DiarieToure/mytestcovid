@@ -10,15 +10,44 @@
     
 
 <script>
-    var temp,rep1,rep,a=0,b=0,somcpt=0;
+    var temp,rep1,rep,a=0,b=0,c,somcpt=0;
 
     function answer(rep) {
+        var etat=["pas inquietant","un peu inquietant","avance","tres avance"];
+        var j=0;
         var cpt=0;
         while (rep !== "o" && rep !=="oui" && rep !=="OUI" && rep1 !== "O" && rep !=="n" && rep !== "non" && rep !=="NON" && rep1 !== "N") {
             rep=prompt("Veuillez repondre par oui ou non","OUI");
         }
         if (rep==="o" || rep==="oui" || rep==="OUI" ) {
             cpt=1;
+            rep2=prompt("Quel est le stade du symptome ?","1 =>pas inquietant, 2=>moyen, 3=> avance, 4=> tres avance");
+            while (rep2 !== "1" && rep2 !=="2" && rep2 !=="3" && rep2 !=="4") {
+                alert("Donnez une reponse entre 1,2,3 et 4")
+                rep2=prompt("Quel est le stade du symptome ?","1 =>pas inquietant, 2=>moyen, 3=> avance, 4=> tres avance");
+
+            }
+            switch (etat[j]) {
+                case j=1:
+                    alert("L'etat du symptome est donc : " + etat[0])
+                    
+                    break;
+                case j=2:
+                    alert("L'etat du symptome est donc : " + etat[1])
+                    
+                    break;
+                case j=3:
+                    alert("L'etat du symptome est donc : " + etat[2])
+                    
+                break;
+                 
+                   
+                default:
+                alert("L'etat du symptome est donc : " + etat[3])
+                    
+                    break;
+            }
+
         }
         else{
             cpt=0;
@@ -49,73 +78,17 @@
         else{
             alert("\n\n Merci de repondre aux questions qui suivent")
 
-            //q1
-            rep=prompt("\nQuestion 1 \n\n Avez-vous des toux recents ou des toux qui se sont aggraves?");
-            var c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
 
-            //q2
-            rep=prompt("\nQuestion 2 \n\n Avez-vous des difficultes a respirer?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q3
-            rep=prompt("\nQuestion 3 \n\n Avez-vous des nez qui coulent?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q4
-            rep=prompt("\nQuestion 4 \n\n Avez-vous des maux de gorge?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q5
-            rep=prompt("\nQuestion 5 \n\n Avez-vous des maux de ventre?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q6
-            rep=prompt("\nQuestion 6 \n\n Avez-vous La diarrhee?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q7
-            rep=prompt("\nQuestion 7 \n\n Avez-vous des fatiques intenses?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q8
-            rep=prompt("\nQuestion 8 \n\n Avez-vous perdu votre appetit?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q9
-            rep=prompt("\nQuestion 9 \n\n Avez-vous des nausees?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q10
-            rep=prompt("\nQuestion 10 \n\n Avez-vous des douleurs musculaires?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q11
-            rep=prompt("\nQuestion 11 \n\n Avez-vous des maux de tete inhabituels?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-
+            var questions = ["\nQuestion 1 \n\n Avez-vous des toux recents ou des toux qui se sont aggraves?","\nQuestion 2 \n\n Avez-vous des difficultes a respirer?","\nQuestion 3 \n\n Avez-vous des nez qui coulent?",
+            "\nQuestion 4 \n\n Avez-vous des maux de gorge?", "\nQuestion 5 \n\n Avez-vous des maux de ventre?", "\nQuestion 6 \n\n Avez-vous La diarrhee?",
+            "\nQuestion 7 \n\n Avez-vous des fatiques intenses?", "\nQuestion 8 \n\n Avez-vous perdu votre appetit?","\nQuestion 9 \n\n Avez-vous des nausees?", "\nQuestion 10 \n\n Avez-vous des douleurs musculaires?", "\nQuestion 11 \n\n Avez-vous des maux de tete inhabituels?"]
+            for (let i= 0; i < questions.length; i++) {
+                rep=prompt(questions[i]);
+                c=answer(rep);
+                somcpt=somcpt+c;
+                console.log(somcpt);
+            }
+ 
             //traitement resulats
             if (somcpt<=2) {
                 alert("\n\n Rassurez-vous !! Vous n'avez pas de covid 19");
@@ -140,73 +113,12 @@
         
             alert("\n\n Merci de repondre aux questions qui suivent")
 
-            //q1
-            rep=prompt("\nQuestion 1 \n\n Avez-vous des toux recents ou des toux qui se sont aggraves?");
-            var c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q2
-            rep=prompt("\nQuestion 2 \n\n Avez-vous des difficultes a respirer?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q3
-            rep=prompt("\nQuestion 3 \n\n Avez-vous des nez qui coulent?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q4
-            rep=prompt("\nQuestion 4 \n\n Avez-vous des maux de gorge?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q5
-            rep=prompt("\nQuestion 5 \n\n Avez-vous des maux de ventre?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q6
-            rep=prompt("\nQuestion 6 \n\n Avez-vous La diarrhee?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q7
-            rep=prompt("\nQuestion 7 \n\n Avez-vous des fatiques intenses?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q8
-            rep=prompt("\nQuestion 8 \n\n Avez-vous perdu votre appetit?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q9
-            rep=prompt("\nQuestion 9 \n\n Avez-vous des nausees?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q10
-            rep=prompt("\nQuestion 10 \n\n Avez-vous des douleurs musculaires?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-            //q11
-            rep=prompt("\nQuestion 11 \n\n Avez-vous des maux de tete inhabituels?");
-            c=answer(rep);
-            somcpt=somcpt+c;
-            console.log(somcpt);
-
-
+            for (let i= 0; i < questions.length; i++) {
+                rep=prompt(questions[i]);
+                c=answer(rep);
+                somcpt=somcpt+c;
+                console.log(somcpt);
+            }
             //traitement resulats
             if (somcpt<=2) {
                 alert("\n\n Rassurez-vous !! Vous n'avez pas de covid 19");
