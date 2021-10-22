@@ -21,33 +21,6 @@
         }
         if (rep==="o" || rep==="oui" || rep==="OUI" ) {
             cpt=1;
-            rep2=prompt("Quel est le stade du symptome ?","1 =>pas inquietant, 2=>moyen, 3=> avance, 4=> tres avance");
-            while (rep2 !== "1" && rep2 !=="2" && rep2 !=="3" && rep2 !=="4") {
-                alert("Donnez une reponse entre 1,2,3 et 4")
-                rep2=prompt("Quel est le stade du symptome ?","1 =>pas inquietant, 2=>moyen, 3=> avance, 4=> tres avance");
-
-            }
-            switch (etat[j]) {
-                case j=1:
-                    alert("L'etat du symptome est donc : " + etat[0])
-                    
-                    break;
-                case j=2:
-                    alert("L'etat du symptome est donc : " + etat[1])
-                    
-                    break;
-                case j=3:
-                    alert("L'etat du symptome est donc : " + etat[2])
-                    
-                break;
-                 
-                   
-                default:
-                alert("L'etat du symptome est donc : " + etat[3])
-                    
-                    break;
-            }
-
         }
         else{
             cpt=0;
